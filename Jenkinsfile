@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { docker { image 'node:16.13.1-alpine' } }
     parameters{
         string(name: 'SPEC', defaultValue: "cypress/e2e/**", description: "script execution")
         choice(name: 'BROWSER', choices: ['chrome', 'firefox'], description: "browser")
@@ -9,8 +9,8 @@ pipeline{
 
         stage('Building'){
             steps{
+                sh 'node --version'
                 sh 'npm install'
-                sh 'npm install -g npx'
                 sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
             }
         }
