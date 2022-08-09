@@ -9,8 +9,8 @@ pipeline{
 
         stage('Building'){
             steps{
-                sh 'npm ci'
-                sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
+                bat 'npm i'
+                bat 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
             }
         }
 
