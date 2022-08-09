@@ -11,14 +11,14 @@ pipeline{
             steps{
                 nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') 
                 sh 'npm config ls'
-                sh 'npm install'
-                sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
             }
         }
 
         stage('Deploying'){
             steps{
                 echo('Deploying the application')
+                sh 'npm install'
+                sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
             }
             
         }
