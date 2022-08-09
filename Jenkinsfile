@@ -1,5 +1,5 @@
 pipeline{
-    agent { docker { image 'node:16.13.1-alpine' } }
+    agent any
     parameters{
         string(name: 'SPEC', defaultValue: "cypress/e2e/**", description: "script execution")
         choice(name: 'BROWSER', choices: ['chrome', 'firefox'], description: "browser")
