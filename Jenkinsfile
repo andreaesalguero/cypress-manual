@@ -9,7 +9,7 @@ pipeline{
 
         stage('Building'){
             steps{
-                npm 'npx cypress run'
+                npm 'npm install'
             }
         }
 
