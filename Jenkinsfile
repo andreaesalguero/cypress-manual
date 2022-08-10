@@ -9,7 +9,8 @@ pipeline{
 
         stage('Building'){
             steps{
-                npm 'npm install'
+                sh npm install
+                sh npx cypress open
             }
         }
 
