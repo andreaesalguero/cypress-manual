@@ -9,8 +9,8 @@ pipeline{
 
         stage('Building'){
             steps{
-                sh npm install
-                sh npx cypress open
+                sh 'npm install'
+                sh 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'
             }
         }
 
