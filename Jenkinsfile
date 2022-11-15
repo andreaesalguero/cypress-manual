@@ -5,8 +5,8 @@ pipeline{
 
         stage('Building'){
             steps{
-                sh 'npm ci'
-                sh "npm run test:ci:record"
+                sh 'npm i'
+                sh "npm run test"
             }
         }
 
